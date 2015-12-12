@@ -64,5 +64,9 @@ test "password should be present (nonblank)" do
     assert_not @user.valid?
   end
 
+  test "authenticated? harus false jika user digest nil" do
+    assert_not @user.authenticated?('')
+  end
+
 
 end
