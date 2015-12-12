@@ -7,11 +7,11 @@ class UsersControllerTest < ActionController::TestCase
     @other_user = users(:ali)
   end
 
-  test "should get index" do
+  test "redirect index klo gak login" do
     get :index
-    assert_response :success
-    assert_not_nil assigns(:users)
+    assert_redirected_to login_url
   end
+
 
   test "should get new" do
     get :new
